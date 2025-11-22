@@ -1,11 +1,14 @@
 package model;
 
+import org.bson.codecs.pojo.annotations.BsonId;
 import org.bson.types.ObjectId;
 
 import java.util.List;
 
 public class Instructores {
+    @BsonId
     private ObjectId _id;
+
     private String nombre;
     private String correo;
     private List<String> especialidades;

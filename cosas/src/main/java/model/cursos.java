@@ -1,12 +1,15 @@
 package model;
 
+import org.bson.codecs.pojo.annotations.BsonId;
 import org.bson.types.ObjectId;
 
 import java.util.Date;
 import java.util.List;
 
 public class cursos {
+    @BsonId
     private ObjectId _id;
+
     private String titulo;
     private String descripcion;
     private ObjectId instructorId;
