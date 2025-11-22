@@ -30,11 +30,11 @@ public class Instructores {
         this.cursosId = cursosId;
     }
 
-    public ObjectId get_id() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void set_id(ObjectId _id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 

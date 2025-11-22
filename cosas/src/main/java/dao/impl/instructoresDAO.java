@@ -25,9 +25,9 @@ public class instructoresDAO implements IInstructorDAO {
     @Override
     public ObjectId crearInstructor(Instructores entidad) throws DaoException {
         try{
-            if(entidad.get_id() == null) entidad.set_id(new ObjectId());
+            if(entidad.getId() == null) entidad.setId(new ObjectId());
             col.insertOne(entidad);
-            return entidad.get_id();
+            return entidad.getId();
         }catch (MongoException e){
             throw new DaoException("error al crear un instructor",e);
         }
@@ -57,7 +57,7 @@ public class instructoresDAO implements IInstructorDAO {
     public Boolean actualizar(Instructores entidad) throws DaoException {
         try{
             UpdateResult resultado = col.replaceOne(
-                    Filters.eq("_id",entidad.get_id()),
+                    Filters.eq("_id",entidad.getId()),
                     entidad
             );
             return resultado.getModifiedCount() > 0;

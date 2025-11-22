@@ -24,13 +24,13 @@ public class cursoDAO implements ICursoDAO {
     @Override
     public ObjectId crearCurso(cursos entidad) throws DaoException {
         try {
-            if(entidad.get_id()== null)entidad.set_id(new ObjectId());
+            if(entidad.getId()== null)entidad.setId(new ObjectId());
             Date ahora = new Date();
             entidad.setCreatedAt(ahora);
             entidad.setUpdatedAt(ahora);
 
             col.insertOne(entidad);
-            return entidad.get_id();
+            return entidad.getId();
         }catch (Exception e){
             throw new DaoException("error al crear un curso",e);
         }
@@ -59,7 +59,7 @@ public class cursoDAO implements ICursoDAO {
         try{
             entidad.setUpdatedAt(new Date());
             UpdateResult resultado = col.replaceOne(
-                    Filters.eq("_id",entidad.get_id()),
+                    Filters.eq("_id",entidad.getId()),
                     entidad
             );
             return resultado.getModifiedCount() > 0;

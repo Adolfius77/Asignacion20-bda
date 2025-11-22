@@ -28,12 +28,12 @@ public class estudiantes {
 
     }
 
-    public ObjectId get_id() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void set_id(ObjectId _id) {
-        this.id = _id;
+    public void setId(ObjectId id) {
+        this.id = id;
     }
 
     public String getNombre() {
