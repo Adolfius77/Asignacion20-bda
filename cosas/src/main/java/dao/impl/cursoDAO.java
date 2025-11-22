@@ -10,6 +10,7 @@ import dao.ICursoDAO;
 import model.cursos;
 import org.bson.types.ObjectId;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,6 +25,10 @@ public class cursoDAO implements ICursoDAO {
     public ObjectId crearCurso(cursos entidad) throws DaoException {
         try {
             if(entidad.get_id()== null)entidad.set_id(new ObjectId());
+            Date ahora = new Date();
+            entidad.setCreatedAt(ahora);
+            entidad.setUpdatedAt(ahora);
+
             col.insertOne(entidad);
             return entidad.get_id();
         }catch (Exception e){
@@ -52,6 +57,7 @@ public class cursoDAO implements ICursoDAO {
     @Override
     public boolean actualizar(cursos entidad) throws DaoException {
         try{
+            entidad.setUpdatedAt(new Date());
             UpdateResult resultado = col.replaceOne(
                     Filters.eq("_id",entidad.get_id()),
                     entidad

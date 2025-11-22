@@ -2,6 +2,7 @@ package model;
 
 import org.bson.types.ObjectId;
 
+import java.util.Date;
 import java.util.List;
 
 public class cursos {
@@ -13,10 +14,12 @@ public class cursos {
     private double rating;
     private List<String> tags;
     private modulos modulo;
+    private Date createdAt;
+    private Date updatedAt;
 
     public cursos() {
     }
-    public cursos(ObjectId _id, String titulo, String descripcion, ObjectId instructorId, double precio, double rating, List<String> tags, modulos modulo){
+    public cursos(ObjectId _id, String titulo, String descripcion, ObjectId instructorId, double precio, double rating, List<String> tags, modulos modulo, Date createdAt, Date updatedAt){
         this._id = _id;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -25,6 +28,8 @@ public class cursos {
         this.rating = rating;
         this.tags = tags;
         this.modulo = modulo;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public ObjectId get_id() {
@@ -91,4 +96,19 @@ public class cursos {
         this.modulo = modulo;
     }
 
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }

@@ -7,8 +7,8 @@ import com.mongodb.client.MongoDatabase;
 public enum MongoClientProvider {
     INSTANCE;
     private MongoClient client;
-    private String dbName = "UsuariosDB";
-    private String uri = "aqui va mi url";
+    private String dbName = "LearnUp";
+    private String uri = "mongodb://localhost:27017/";
 
     public synchronized void init() {
         if (client == null) {
