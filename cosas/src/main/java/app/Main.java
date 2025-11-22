@@ -156,7 +156,7 @@ public class Main {
         );
 
 
-        instructor.set_id(id);
+        instructor.setId(id);
         instructor.setAniosExperiencia(11);
         controller.actualizarInstructor(instructor);
         System.out.println("3. Instructor actualizado (Años exp: 11).");
@@ -201,7 +201,7 @@ public class Main {
         );
 
 
-        estudiante.set_id(id);
+        estudiante.setId(id);
         estudiante.setNombre("Maria G. (Editado)");
         controller.actualizarEstudiante(estudiante);
         System.out.println("3. Estudiante actualizado.");
