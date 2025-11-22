@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Instructores {
     @BsonId
-    private ObjectId _id;
+    private ObjectId id;
 
     private String nombre;
     private String correo;
@@ -19,8 +19,8 @@ public class Instructores {
 
     public Instructores() {
     }
-    public Instructores(ObjectId _id, String nombre, String correo, List<String> especialidades, int aniosExperiencia, String bio, Contacto contacto, List<String> cursosId){
-        this._id = _id;
+    public Instructores(ObjectId id, String nombre, String correo, List<String> especialidades, int aniosExperiencia, String bio, Contacto contacto, List<String> cursosId){
+        this.id = id;
         this.nombre = nombre;
         this.correo = correo;
         this.especialidades = especialidades;
@@ -31,11 +31,11 @@ public class Instructores {
     }
 
     public ObjectId get_id() {
-        return _id;
+        return id;
     }
 
     public void set_id(ObjectId _id) {
-        this._id = _id;
+        this.id = id;
     }
 
     public String getNombre() {
